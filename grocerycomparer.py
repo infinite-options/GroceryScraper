@@ -9,13 +9,14 @@ wholefoods_url = 'https://products.wholefoodsmarket.com/api/search?sort=relevanc
 # Request URL and parse JSON
 response = requests.get(wholefoods_url)
 response.raise_for_status() # Raise exception if response invalid
-data = response.json()['list'][0]['store']['price']
+item = response.json()['list'][0]['name']
+price = response.json()['list'][0]['store']['price']
 
 # Home page routing
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    return render_template('home.html', item=item, price=price)
 
 # Enable debugging when running
 if __name__ == '__main__':
