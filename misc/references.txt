@@ -1,0 +1,5 @@
+Web scraping: http://www.gregreda.com/2015/02/15/web-scraping-finding-the-api/
+Whole Foods product search: https://products.wholefoodsmarket.com/search?sort=relevance&store=10259&subcategory=produce.fresh-fruit
+API for WF products: https://products.wholefoodsmarket.com/api/search?sort=relevance&store=10259&skip=0&filters=%5B%7B%22ns%22%3A%22subcategory%22%2C%22key%22%3A%22fresh-fruit%22%2C%22value%22%3A%22produce.fresh-fruit%22%7D%5D
+
+Beautiful Soup (additional web scraping?): https://www.analyticsvidhya.com/blog/2015/10/beginner-guide-web-scraping-beautiful-soup-python/
