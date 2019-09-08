@@ -4,7 +4,13 @@
     <title>GROCERIES</title>
 </head>
 <body>
-    <h1>Groceries</h1>
-    <p>{{ item }} is {{ price }}</p>
+    <h1>Whole Foods</h1>
+    <table style="width: 100%">
+        {% for item in items_wholefoods %}
+            <tr>
+                <th>{{ item }}</th>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
