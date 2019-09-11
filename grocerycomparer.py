@@ -21,16 +21,16 @@ stores = []
 
 # Add items and prices
 for i in range(20):
-    items = items + (response_wholefoods.json()['list'][i]['name'])
-    prices = prices + (response_wholefoods.json()['list'][i]['store']['price'])
-    stores = stores + ('Whole Foods')
+    items.append(response_wholefoods.json()['list'][i]['name'])
+    prices.append(response_wholefoods.json()['list'][i]['store']['price'])
+    stores.append('Whole Foods')
     # items_raleys = items_raleys + ((response_raleys.json()['list'][i]['name']),(response_raleys.json()['list'][i]['store']['price']))
 
 # Home page routing
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', items=items, prices=prices, stores=stores)
+    return render_template('home.html', groceries=zip(items, prices, stores))
 
 # Enable debugging when running
 if __name__ == '__main__':

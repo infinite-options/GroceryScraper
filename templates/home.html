@@ -4,11 +4,18 @@
     <title>GROCERIES</title>
 </head>
 <body>
-    <h1>Whole Foods</h1>
+    <h1>Groceries</h1>
     <table style="width: 100%">
-        {% for item in items %}
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Store</th>
+        </tr>
+        {% for item, price, stores in groceries %}
             <tr>
-                <th>{{ item }}</th>
+                <td>{{ item }}</td>
+                <td>{{ price }}</td>
+                <td>{{ stores }}</td>
             </tr>
         {% endfor %}
     </table>
