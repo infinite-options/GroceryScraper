@@ -10,12 +10,14 @@
             <th>Item</th>
             <th>Price</th>
             <th>Store</th>
+            <th>Unit</th>
         </tr>
-        {% for item, price, stores in groceries %}
+        {% for item, price, store, unit in groceries %}
             <tr>
                 <td>{{ item }}</td>
                 <td>{{ price }}</td>
-                <td>{{ stores }}</td>
+                <td>{{ store }}</td>
+                <td>{{ unit }}</td>
             </tr>
         {% endfor %}
     </table>
