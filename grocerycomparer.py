@@ -1,24 +1,27 @@
 from flask import Flask, render_template
 import requests
+import urllib.request
+import time
+import json
+from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-# URL
-wholefoods_url = 'https://products.wholefoodsmarket.com/api/search?sort=relevance&store=10259&skip=0&filters=%5B%7B%22ns%22%3A%22category%22%2C%22key%22%3A%22produce%22%2C%22value%22%3A%22produce%22%7D%2C%7B%22ns%22%3A%22subcategory%22%2C%22key%22%3A%22fresh-vegetables%22%2C%22value%22%3A%22produce.fresh-vegetables%22%7D%5D'
-# RALEYS 401 EXCEPTION ERROR UNAUTHORIZED
-# raleys_url = 'https://shop.raleys.com/api/v2/store_products?_nocache=1568189174260&category_id=19&category_ids=19&limit=60&offset=0&sort=popular'
-target_url = 'https://redsky.target.com/v2/plp/collection/13562231,14919690,13728423,14919033,13533833,13459265,14917313,13519319,13533837,14919691,13479115,47778362,15028201,51467685,50846848,50759802,50879657,13219631,13561421,52062271,14917361,51803965,13474244,13519318?key=eb2551e4accc14f38cc42d32fbc2b2ea&pricing_store_id=2088&multichannel_option=basics&storeId=321'
-safeway_url = 'https://shop.safeway.com/bin/safeway/product/aemaisle?aisleId=1_23_2&storeId=1483'
+# Initialize data structures for json data
+responses = []
+storenames = []
+index = 0
 
-# Request URL and parse JSON
-response_wholefoods = requests.get(wholefoods_url)
-response_wholefoods.raise_for_status() # Raise exception if response invalid
-# response_raleys = requests.get(raleys_url)
-# response_raleys.raise_for_status()
-response_target = requests.get(target_url)
-response_target.raise_for_status()
-response_safeway = requests.get(safeway_url)
-response_safeway.raise_for_status()
+with open('api_urls.json', 'r') as api_f:
+    apiurls_dict = json.load(api_f)
+
+for apiurl in apiurls_dict:
+    responses.append('')
+    storenames.append('')
+    responses[index] = requests.get(apiurl['url'])
+    responses[index].raise_for_status()
+    storenames[index] = apiurl['name']
+    index += 1
 
 # Initialize items and prices lists
 items = []
@@ -26,23 +29,41 @@ prices = []
 stores = []
 units = []
 
+# Convert to price per pound
+def convertPricePerUnits(basePrice, baseUnit, numberOfUnits):
+    retPrice = float(basePrice)
+    if baseUnit == "OUNCE":
+        retPrice *= 16
+    return retPrice/numberOfUnits
+
+def convertUnits(baseUnits):
+    retUnits = baseUnits
+    if baseUnits == "OUNCE":
+        retUnits = "POUND"
+    if baseUnits == "LB":
+        retUnits = "POUND"
+    return retUnits
+
+def unitQuantity(productName, baseUnits):
+    wordsArray = productName.lower().split()    # Splits product description into an array of words
+    if baseUnits in wordsArray[1:]:
+        return wordsArray[wordsArray.index(baseUnits)-1]
+
 # Add items and prices
 for i in range(20):
-    items.append(response_wholefoods.json()['list'][i]['name'])
-    prices.append(response_wholefoods.json()['list'][i]['store']['price'])
-    stores.append('Whole Foods')
-    units.append(response_wholefoods.json()['list'][i]['store']['retail_unit'])
-    items.append(response_target.json()['search_response']['items']['Item'][i]['title'])
-    prices.append(response_target.json()['search_response']['items']['Item'][i]['price']['current_retail'])
-    stores.append('Target')
-    units.append('n/a')
-    items.append(response_safeway.json()['productsinfo'][i]['description'])
-    prices.append(response_safeway.json()['productsinfo'][i]['price'])
+#   items.append(responses[0].json()['list'][i]['name'])
+#   prices.append(responses[0].json()['list'][i]['store']['price'])
+#   stores.append('Whole Foods')
+#   units.append(responses[0].json()['list'][i]['store']['retail_unit'])
+#   items.append(responses[1].json()['search_response']['items']['Item'][i]['title'])
+#   prices.append(responses[1].json()['search_response']['items']['Item'][i]['price']['current_retail'])
+#   stores.append('Target')
+#   units.append('n/a')
+    
+    items.append(responses[2].json()['productsinfo'][i]['description'])
+    prices.append(convertPricePerUnits(responses[2].json()['productsinfo'][i]['pricePer'],responses[2].json()['productsinfo'][i]['unitOfMeasure'],1))
     stores.append('Safeway')
-    units.append(response_safeway.json()['productsinfo'][i]['unitOfMeasure'])
-#   items.append(response_raleys.json()['items'][i]['name'])
-#   prices.append(response_raleys.json()['items'][i]['name']['base_price'])
-#   stores.append('Raleys')
+    units.append(convertUnits(responses[2].json()['productsinfo'][i]['unitOfMeasure']))
 
 # Home page routing
 @app.route("/")

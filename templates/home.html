@@ -9,17 +9,20 @@
         <tr>
             <th>Item</th>
             <th>Price</th>
+            <th>per unit</th>
             <th>Store</th>
-            <th>Unit</th>
         </tr>
         {% for item, price, store, unit in groceries %}
             <tr>
                 <td>{{ item }}</td>
                 <td>{{ price }}</td>
-                <td>{{ store }}</td>
                 <td>{{ unit }}</td>
+                <td>{{ store }}</td>
             </tr>
         {% endfor %}
     </table>
+    <!--
+        Add buttons that sort categories
+    -->
 </body>
 </html>
