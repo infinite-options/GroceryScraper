@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GROCERIES (unsorted)</title>
+</head>
+<body>
+    <h1>Groceries</h1>
+    <table style="width: 100%">
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>per unit</th>
+            <th>Store</th>
+        </tr>
+        {% for item, price, store, unit in groceries %}
+            <tr>
+                <td>{{ item }}</td>
+                <td>{{ price }}</td>
+                <td>{{ unit }}</td>
+                <td>{{ store }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <!--
+        Add buttons that sort categories
+    -->
+</body>
+</html>
