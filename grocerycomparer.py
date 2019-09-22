@@ -12,9 +12,11 @@ responses = []
 storenames = []
 index = 0
 
+# Load JSON containing URLs of APIs of grocery stores
 with open('api_urls.json', 'r') as api_f:
     apiurls_dict = json.load(api_f)
 
+# Organize API URLs
 for apiurl in apiurls_dict:
     responses.append('')
     storenames.append('')
@@ -24,6 +26,7 @@ for apiurl in apiurls_dict:
     index += 1
 
 # Initialize items and prices lists
+groceries_dict = ['Asparagus', 'Broccoli', 'Cucumbers']
 items = []
 prices = []
 stores = []
@@ -36,6 +39,7 @@ def convertPricePerUnits(basePrice, baseUnit, numberOfUnits):
         retPrice *= 16
     return retPrice/numberOfUnits
 
+# Convert units
 def convertUnits(baseUnits):
     retUnits = baseUnits
     if baseUnits == "OUNCE":
@@ -44,6 +48,7 @@ def convertUnits(baseUnits):
         retUnits = "POUND"
     return retUnits
 
+# Return quantity of units
 def unitQuantity(productName, baseUnits):
     wordsArray = productName.lower().split()    # Splits product description into an array of words
     if baseUnits in wordsArray[1:]:
