@@ -1,9 +1,10 @@
 from flask import Flask, render_template
+# from flask_sqlalchemy import SQLAlchemy
 import requests
 import urllib.request
 import time
 import json
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
@@ -31,6 +32,9 @@ items = []
 prices = []
 stores = []
 units = []
+items_generic = ['Broccoli', 'Green Asparagus', 'Iceberg Lettuce', 'Cucumbers', 'Vine Tomatoes']
+header_row = ['Item']
+header_row.append(storenames)
 
 # Convert to price per pound
 def convertPricePerUnits(basePrice, baseUnit, numberOfUnits):
@@ -54,27 +58,50 @@ def unitQuantity(productName, baseUnits):
     if baseUnits in wordsArray[1:]:
         return wordsArray[wordsArray.index(baseUnits)-1]
 
+# EXACT WORD CHECK (does not yet check tomato vs tomatoes)
+# Solves in inefficient time
+def pivotSort(items_generic, items, prices, storenames, units, itemcount):
+    retTable = []
+    for item in items_generic:
+        itemGenArr = item.lower().split()
+        for store in storenames:
+            tableRow = []
+            for count in range(itemcount):
+                itemArr = items[count].lower().split()
+                if all(word in itemArr for word in itemGenArr):
+                    tableRow.append(prices[count])
+                else:
+                    tableRow.append("n/a")
+            retTable.append(tableRow)
+    return retTable
+
 # Add items and prices
-for i in range(20):
-#   items.append(responses[0].json()['list'][i]['name'])
-#   prices.append(responses[0].json()['list'][i]['store']['price'])
-#   stores.append('Whole Foods')
-#   units.append(responses[0].json()['list'][i]['store']['retail_unit'])
+for itemcount in range(20):
+    items.append(responses[0].json()['list'][itemcount]['name'])
+    prices.append(responses[0].json()['list'][itemcount]['store']['price'])
+    stores.append('Whole Foods')
+    units.append(responses[0].json()['list'][itemcount]['store']['retail_unit'])
 #   items.append(responses[1].json()['search_response']['items']['Item'][i]['title'])
 #   prices.append(responses[1].json()['search_response']['items']['Item'][i]['price']['current_retail'])
 #   stores.append('Target')
 #   units.append('n/a')
-    
-    items.append(responses[2].json()['productsinfo'][i]['description'])
-    prices.append(convertPricePerUnits(responses[2].json()['productsinfo'][i]['pricePer'],responses[2].json()['productsinfo'][i]['unitOfMeasure'],1))
+    items.append(responses[2].json()['productsinfo'][itemcount]['description'])
+    prices.append(convertPricePerUnits(responses[2].json()['productsinfo'][itemcount]['pricePer'],responses[2].json()['productsinfo'][itemcount]['unitOfMeasure'],1))
     stores.append('Safeway')
-    units.append(convertUnits(responses[2].json()['productsinfo'][i]['unitOfMeasure']))
+    units.append(convertUnits(responses[2].json()['productsinfo'][itemcount]['unitOfMeasure']))
+
+groceriesTable = pivotSort(items_generic, items, prices, storenames, units, itemcount)
 
 # Home page routing
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', groceries=zip(items, prices, stores, units))
+    return render_template('home.html', groceries=zip(*groceriesTable))
+
+# Unsorted table
+@app.route("/unsorted")
+def unsorted():
+    return render_template('unsorted.html', groceries=zip(items, prices, stores, units))
 
 # Enable debugging when running
 if __name__ == '__main__':
