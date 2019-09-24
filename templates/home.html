@@ -6,10 +6,15 @@
 <body>
     <h1>Groceries</h1>
     <table style="width: 100%">
+        <tr>
+            {% for item in headerRow %}
+                <th>{{ item }}</th>
+            {% endfor %}
+        </tr>
         {% for row in groceries %}
             <tr>
                 {% for item in row %}
-                    <td>{{ item }}
+                    <td>{{ item }}</td>
                 {% endfor %}
             </tr>
         {% endfor %}
