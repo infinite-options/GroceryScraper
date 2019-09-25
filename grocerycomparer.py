@@ -7,6 +7,7 @@ import json
 # from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+apiURLFile = 'api_urls.json'
 
 # Initialize data structures for json data
 responses = []
@@ -14,7 +15,7 @@ storenames = []
 index = 0
 
 # Load JSON containing URLs of APIs of grocery stores
-with open('api_urls.json', 'r') as api_f:
+with open(apiURLFile, 'r') as api_f:
     apiurls_dict = json.load(api_f)
 
 # Organize API URLs
