@@ -1,41 +1,55 @@
+# FEATURES NEEDED TO BE ADDED
+# pivotSort: New logic for product item name and generic item name matching
+# pivotSort: Some items not detected
+# Implement proper prices/units handling, some of it is not correct
+# Implement automation of API JSON parsing, currently done manually
+# Parse more than 20 items for each store
+# Organic flags in JSON are repetitive; implement code that will handle organic and non-organic without organic flag in JSON file
+
+# Packages
 from flask import Flask, render_template
 import requests
 import urllib.request
 import time
 import json
-# from bs4 import BeautifulSoup
-# from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-apiURLFile = 'api_urls.json'
+
+# JSON data file
+json_data = 'jsondata.json'
 
 # Initialize data structures for json data
 responses = []
 storenames = []
 items_generic = []
+organic_arr = []
 index = 0
 
 # Load JSON containing URLs of APIs of grocery stores
-with open(apiURLFile, 'r') as api_f:
-    apiurls_dict = json.load(api_f)
+with open(json_data, 'r') as data_f:
+    data_dict = json.load(data_f)
 
 # Organize API URLs
-for apiurl in apiurls_dict['apiURL']:
+for apiurl in data_dict['apiURL']:
     responses.append('')
-    storenames.append('')
-#   items_generic.append('')
     responses[index] = requests.get(apiurl['url'])
     responses[index].raise_for_status()
-    storenames[index] = apiurl['name']
-#   items_generic[index] = apiurl['genericItems']['name']
+    storenames.append(apiurl['name'])
     index += 1
+
+# Generic item list from JSON
+for genstore in data_dict['genericItems']:
+    items_generic.append(genstore['name'])
+    organic_arr.append(genstore['organic'])
 
 # Initialize items and prices lists
 items = []
 prices = []
 stores = []
 units = []
-headerRow = ['Item']
+
+# Header row for pivot table on website
+headerRow = ['Item', 'Organic?']
 headerRow.extend(storenames)
 
 # Convert to price per pound
@@ -60,18 +74,36 @@ def unitQuantity(productName, baseUnits):
     if baseUnits in wordsArray[1:]:
         return wordsArray[wordsArray.index(baseUnits)-1]
 
+# Return boolean, organic check, argument takes binary value, returns string
+def isOrganicReturnString(value):
+    if value == 1:
+        return "yes"
+    elif value == 0:
+        return "no"
+    else:
+        return "error: n/a"
+
+# Return boolean, organic check, argument takes an array of words, returns binary
+def isOrganic(productNameArr):
+    if "organic" in productNameArr:
+        return 1
+    else:
+        return 0
+
 # EXACT WORD CHECK (does not yet check tomato vs tomatoes)
 # Solves in inefficient time
+# NEED COLUMN FOR UNITS
 def pivotSort(items_generic, items, prices, stores, storenames, units, itemcount):
     retTable = []
+    genericItemIndex = 0
     for item in items_generic:
-        tableRow = [item]
         itemGenArr = item.lower().split()
+        tableRow = [item, isOrganicReturnString(organic_arr[genericItemIndex])]
         for store in storenames:
             itemFound = 0
             for count in range(itemcount):
                 itemArr = items[count].lower().split()
-                if all(word in itemArr for word in itemGenArr) and (stores[count] == store):
+                if all(word in itemArr for word in itemGenArr) and (stores[count] == store) and (isOrganic(itemArr) == organic_arr[genericItemIndex]) and (itemFound == 0):
                     tableRow.append(prices[count])
                     # Debugging
                     print(items[count]," is ",prices[count]," at ",stores[count])
@@ -81,16 +113,20 @@ def pivotSort(items_generic, items, prices, stores, storenames, units, itemcount
                 # Debugging
                 print(item," not found at ",store)
         retTable.append(tableRow)
+        genericItemIndex += 1
     return retTable
 
 # Add items and prices
+# NEEDS SIGNIFICANT CLEANUP - CURRENTLY MANUALLY PARSING APIS
+# WRITE FUNCTION THAT AUTOMATES
+# INCLUDE DIRECTORY OF KEYS TO PARSE FROM IN THE JSON ITSELF
 for itemcount in range(20):
     items.append(responses[0].json()['list'][itemcount]['name'])
-    prices.append(responses[0].json()['list'][itemcount]['store']['price'])
+    prices.append(convertPricePerUnits(responses[0].json()['list'][itemcount]['store']['price'],responses[0].json()['list'][itemcount]['store']['retail_unit'],1))
     stores.append('Whole Foods')
-    units.append(responses[0].json()['list'][itemcount]['store']['retail_unit'])
+    units.append(convertUnits(responses[0].json()['list'][itemcount]['store']['retail_unit']))
     items.append(responses[1].json()['search_response']['items']['Item'][itemcount]['title'])
-    prices.append(responses[1].json()['search_response']['items']['Item'][itemcount]['price']['current_retail'])
+    prices.append(convertPricePerUnits(responses[1].json()['search_response']['items']['Item'][itemcount]['price']['current_retail'],'POUND',1)) # POUND IS NOT CORRECT, REPLACE WITH A FUNCTION THAT CAN READ/DETECT UNIT FROM ITEM DESCRIPTION (temporarily using pound to keep this functional)
     stores.append('Target')
     units.append('n/a')
     items.append(responses[2].json()['productsinfo'][itemcount]['description'])
@@ -102,7 +138,8 @@ groceriesTable = pivotSort(items_generic, items, prices, stores, storenames, uni
 
 # Debugging
 print(groceriesTable)
-print(items_generic)
+# print(items_generic)
+# print(organic_arr)
 
 # Home page routing
 @app.route("/")
