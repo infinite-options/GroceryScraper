@@ -12,6 +12,7 @@ apiURLFile = 'api_urls.json'
 # Initialize data structures for json data
 responses = []
 storenames = []
+items_generic = []
 index = 0
 
 # Load JSON containing URLs of APIs of grocery stores
@@ -19,12 +20,14 @@ with open(apiURLFile, 'r') as api_f:
     apiurls_dict = json.load(api_f)
 
 # Organize API URLs
-for apiurl in apiurls_dict:
+for apiurl in apiurls_dict['apiURL']:
     responses.append('')
     storenames.append('')
+#   items_generic.append('')
     responses[index] = requests.get(apiurl['url'])
     responses[index].raise_for_status()
     storenames[index] = apiurl['name']
+#   items_generic[index] = apiurl['genericItems']['name']
     index += 1
 
 # Initialize items and prices lists
@@ -32,7 +35,6 @@ items = []
 prices = []
 stores = []
 units = []
-items_generic = ['Broccoli', 'Green Asparagus', 'Iceberg Lettuce', 'Cucumbers', 'Vine Tomatoes']
 headerRow = ['Item']
 headerRow.extend(storenames)
 
@@ -71,9 +73,13 @@ def pivotSort(items_generic, items, prices, stores, storenames, units, itemcount
                 itemArr = items[count].lower().split()
                 if all(word in itemArr for word in itemGenArr) and (stores[count] == store):
                     tableRow.append(prices[count])
+                    # Debugging
+                    print(items[count]," is ",prices[count]," at ",stores[count])
                     itemFound = 1
             if itemFound == 0:
-                tableRow.append("n/a")
+                tableRow.append("none")
+                # Debugging
+                print(item," not found at ",store)
         retTable.append(tableRow)
     return retTable
 
