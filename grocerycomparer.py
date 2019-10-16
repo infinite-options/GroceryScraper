@@ -21,6 +21,10 @@ json_data = 'jsondata.json'
 # Initialize data structures for json data
 responses = []
 storenames = []
+itemAccessKeys = []
+priceAccessKeys = []
+unitAccessKeys = []
+storeZipCodes = []
 items_generic = []
 organic_arr = []
 index = 0
@@ -35,6 +39,10 @@ for apiurl in data_dict['apiURL']:
     responses[index] = requests.get(apiurl['url'])
     responses[index].raise_for_status()
     storenames.append(apiurl['name'])
+    itemAccessKeys.append(apiurl['itemAccessKeys'])
+    priceAccessKeys.append(apiurl['priceAccessKeys'])
+    unitAccessKeys.append(apiurl['unitAccessKeys'])
+    storeZipCodes.append(apiurl['zipCode'])
     index += 1
 
 # Generic item list from JSON
@@ -48,9 +56,15 @@ prices = []
 stores = []
 units = []
 
+# Append zipcode to storename
+def appendZipCodeToStoreName(storenames, storeZipCodes):
+    for index, zipcode in enumerate(storeZipCodes):
+        storenames[index] = storenames[index]+"("+str(zipcode)+")"
+    return storenames
+
 # Header row for pivot table on website
 headerRow = ['Item', 'Organic?']
-headerRow.extend(storenames)
+headerRow.extend(appendZipCodeToStoreName(storenames, storeZipCodes))
 
 # Convert to price per pound
 def convertPricePerUnits(basePrice, baseUnit, numberOfUnits):
@@ -106,38 +120,62 @@ def pivotSort(items_generic, items, prices, stores, storenames, units, itemcount
                 if all(word in itemArr for word in itemGenArr) and (stores[count] == store) and (isOrganic(itemArr) == organic_arr[genericItemIndex]) and (itemFound == 0):
                     tableRow.append(prices[count])
                     # Debugging
-                    print(items[count]," is ",prices[count]," at ",stores[count])
+                    #print(items[count]," is ",prices[count]," at ",stores[count])
                     itemFound = 1
             if itemFound == 0:
                 tableRow.append("none")
                 # Debugging
-                print(item," not found at ",store)
+                #print(item," not found at ",store)
         retTable.append(tableRow)
         genericItemIndex += 1
     return retTable
 
+# Generic Item Name Check, return boolean
+#def isGeneric(itemArr, itemGenArr):
+#    for words in itemArr:
+        
+# Get access keys for a JSON
+def getKeys(data, keys, apiItemIndex):
+    # Temporary fix for APIs missing data (i.e. Target units), fix ASAP
+    if keys[0] == "N/A":
+        return keys[1]
+    for key in keys:
+        if key == "apiItemIndex":
+            key = apiItemIndex
+        data = data[key]
+#       print(key)
+    return data
+
 # Add items and prices
-# NEEDS SIGNIFICANT CLEANUP - CURRENTLY MANUALLY PARSING APIS
-# WRITE FUNCTION THAT AUTOMATES
-# INCLUDE DIRECTORY OF KEYS TO PARSE FROM IN THE JSON ITSELF
+# Fixed: NEEDS SIGNIFICANT CLEANUP - CURRENTLY MANUALLY PARSING APIS
+# Fixed: WRITE FUNCTION THAT AUTOMATES
+# Fixed: INCLUDE DIRECTORY OF KEYS TO PARSE FROM IN THE JSON ITSELF
 for itemcount in range(20):
-    items.append(responses[0].json()['list'][itemcount]['name'])
-    prices.append(convertPricePerUnits(responses[0].json()['list'][itemcount]['store']['price'],responses[0].json()['list'][itemcount]['store']['retail_unit'],1))
-    stores.append('Whole Foods')
-    units.append(convertUnits(responses[0].json()['list'][itemcount]['store']['retail_unit']))
-    items.append(responses[1].json()['search_response']['items']['Item'][itemcount]['title'])
-    prices.append(convertPricePerUnits(responses[1].json()['search_response']['items']['Item'][itemcount]['price']['current_retail'],'POUND',1)) # POUND IS NOT CORRECT, REPLACE WITH A FUNCTION THAT CAN READ/DETECT UNIT FROM ITEM DESCRIPTION (temporarily using pound to keep this functional)
-    stores.append('Target')
-    units.append('n/a')
-    items.append(responses[2].json()['productsinfo'][itemcount]['description'])
-    prices.append(convertPricePerUnits(responses[2].json()['productsinfo'][itemcount]['pricePer'],responses[2].json()['productsinfo'][itemcount]['unitOfMeasure'],1))
-    stores.append('Safeway')
-    units.append(convertUnits(responses[2].json()['productsinfo'][itemcount]['unitOfMeasure']))
+    for storeindex in range(3):
+        itemToAppend = getKeys(responses[storeindex].json(), itemAccessKeys[storeindex], itemcount)
+        unitsToAppend = getKeys(responses[storeindex].json(), unitAccessKeys[storeindex], itemcount)
+        priceToAppend = getKeys(responses[storeindex].json(), priceAccessKeys[storeindex], itemcount)
+        items.append(itemToAppend)
+        prices.append(convertPricePerUnits(priceToAppend, unitsToAppend, 1)) # Fix
+        units.append(convertUnits(unitsToAppend))
+        stores.append(storenames[storeindex])
+
+#   prices.append(convertPricePerUnits(responses[0].json()['list'][itemcount]['store']['price'],responses[0].json()['list'][itemcount]['store']['retail_unit'],1))
+#   stores.append('Whole Foods')
+#   units.append(convertUnits(responses[0].json()['list'][itemcount]['store']['retail_unit']))
+#   items.append(responses[1].json()['search_response']['items']['Item'][itemcount]['title'])
+#   prices.append(convertPricePerUnits(responses[1].json()['search_response']['items']['Item'][itemcount]['price']['current_retail'],'POUND',1)) # POUND IS NOT CORRECT, REPLACE WITH A FUNCTION THAT CAN READ/DETECT UNIT FROM ITEM DESCRIPTION (temporarily using pound to keep this functional)
+#   stores.append('Target')
+#   units.append('n/a')
+#   items.append(responses[2].json()['productsinfo'][itemcount]['description'])
+#   prices.append(convertPricePerUnits(responses[2].json()['productsinfo'][itemcount]['pricePer'],responses[2].json()['productsinfo'][itemcount]['unitOfMeasure'],1))
+#   stores.append('Safeway')
+#   units.append(convertUnits(responses[2].json()['productsinfo'][itemcount]['unitOfMeasure']))
 
 groceriesTable = pivotSort(items_generic, items, prices, stores, storenames, units, itemcount)
 
 # Debugging
-print(groceriesTable)
+# print(groceriesTable)
 # print(items_generic)
 # print(organic_arr)
 
@@ -154,4 +192,4 @@ def unsorted():
 
 # Enable debugging when running
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port='9001', debug=True)
