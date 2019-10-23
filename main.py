@@ -1,19 +1,41 @@
-# FEATURES NEEDED TO BE ADDED
-# pivotSort: New logic for product item name and generic item name matching
-# pivotSort: Some items not detected
-# Implement proper prices/units handling, some of it is not correct
-# Implement automation of API JSON parsing, currently done manually
-# Parse more than 20 items for each store
-# Organic flags in JSON are repetitive; implement code that will handle organic and non-organic without organic flag in JSON file
+# Enter password for MySQL RDS as first command line argument
 
-# Packages
+'''
 from flask import Flask, render_template
+'''
+from datetime import datetime
+
+import sys
 import requests
 import urllib.request
 import time
 import json
+import pymysql
 
+'''
 app = Flask(__name__)
+'''
+
+# RDS
+RDS_HOST = 'pm-mysqldb.cxjnrciilyjq.us-west-1.rds.amazonaws.com'
+RDS_PORT = 3306
+RDS_USER = 'admin'
+RDS_DB = 'pricing'
+
+# RDS PASSWORD
+if len(sys.argv) == 2:
+    RDS_PW = str(sys.argv[1])
+else:
+    print("Usage: Enter password for MySQL server as first command line argument")
+    sys.exit(1)
+
+# RDS connection
+conn = pymysql.connect( RDS_HOST,
+                        user=RDS_USER,
+                        port=RDS_PORT,
+                        passwd=RDS_PW,
+                        db=RDS_DB)
+cur = conn.cursor()
 
 # JSON data file
 json_data = 'jsondata.json'
@@ -25,9 +47,14 @@ itemAccessKeys = []
 priceAccessKeys = []
 unitAccessKeys = []
 storeZipCodes = []
+index = 0
+numberOfStores = 5
+numberOfItemsPerStore = 20
+
+'''
 items_generic = []
 organic_arr = []
-index = 0
+'''
 
 # Load JSON containing URLs of APIs of grocery stores
 with open(json_data, 'r') as data_f:
@@ -45,17 +72,30 @@ for apiurl in data_dict['apiURL']:
     storeZipCodes.append(apiurl['zipCode'])
     index += 1
 
+# Deprecated generic item word array
+'''
 # Generic item list from JSON
 for genstore in data_dict['genericItems']:
     items_generic.append(genstore['name'])
     organic_arr.append(genstore['organic'])
+'''
 
+# Deprecated arrays for printing to web endpoint
+'''
 # Initialize items and prices lists
 items = []
 prices = []
 stores = []
 units = []
+'''
 
+# Get current date and time
+def getCurrentDateAndTime():
+    now = datetime.now()
+    # dd/mm/YY HH:MM:SS
+    return now.strftime("%m/%d/%Y %H:%M:%S")
+
+'''
 # Append zipcode to storename
 def appendZipCodeToStoreName(storenames, storeZipCodes):
     for index, zipcode in enumerate(storeZipCodes):
@@ -64,7 +104,8 @@ def appendZipCodeToStoreName(storenames, storeZipCodes):
 
 # Header row for pivot table on website
 headerRow = ['Item', 'Organic?']
-headerRow.extend(appendZipCodeToStoreName(storenames, storeZipCodes))
+headerRow.extend(storenames)
+# headerRow.extend(appendZipCodeToStoreName(storenames, storeZipCodes))
 
 # Convert to price per pound
 def convertPricePerUnits(basePrice, baseUnit, numberOfUnits):
@@ -103,7 +144,11 @@ def isOrganic(productNameArr):
         return 1
     else:
         return 0
+'''
 
+
+# Old pivot sort (runs in O(n^3) :/)
+'''
 # EXACT WORD CHECK (does not yet check tomato vs tomatoes)
 # Solves in inefficient time
 # NEED COLUMN FOR UNITS
@@ -129,11 +174,14 @@ def pivotSort(items_generic, items, prices, stores, storenames, units, itemcount
         retTable.append(tableRow)
         genericItemIndex += 1
     return retTable
+'''
 
+'''
 # Generic Item Name Check, return boolean
 #def isGeneric(itemArr, itemGenArr):
 #    for words in itemArr:
-        
+'''
+
 # Get access keys for a JSON
 def getKeys(data, keys, apiItemIndex):
     # Temporary fix for APIs missing data (i.e. Target units), fix ASAP
@@ -150,16 +198,25 @@ def getKeys(data, keys, apiItemIndex):
 # Fixed: NEEDS SIGNIFICANT CLEANUP - CURRENTLY MANUALLY PARSING APIS
 # Fixed: WRITE FUNCTION THAT AUTOMATES
 # Fixed: INCLUDE DIRECTORY OF KEYS TO PARSE FROM IN THE JSON ITSELF
-for itemcount in range(20):
-    for storeindex in range(3):
+#def insertGroceriesToTableQuery(itemcount, numberOfStores):
+mysql_insert_groceries_query = """INSERT INTO groceries (item, price, unit, store, zipcode, price_date)
+                        VALUES (%s, %s, %s, %s, %s, %s) """
+
+for itemcount in range(numberOfItemsPerStore):
+    for storeindex in range(numberOfStores):
         itemToAppend = getKeys(responses[storeindex].json(), itemAccessKeys[storeindex], itemcount)
         unitsToAppend = getKeys(responses[storeindex].json(), unitAccessKeys[storeindex], itemcount)
         priceToAppend = getKeys(responses[storeindex].json(), priceAccessKeys[storeindex], itemcount)
-        items.append(itemToAppend)
-        prices.append(convertPricePerUnits(priceToAppend, unitsToAppend, 1)) # Fix
-        units.append(convertUnits(unitsToAppend))
+        insertTuple = (itemToAppend, priceToAppend, unitsToAppend, storenames[storeindex], storeZipCodes[storeindex], getCurrentDateAndTime())
+        cur.execute(mysql_insert_groceries_query, insertTuple)
+'''        items.append(itemToAppend)
+        prices.append(priceToAppend)
+        units.append(unitsToAppend)
         stores.append(storenames[storeindex])
+'''
+conn.commit()
 
+'''
 #   prices.append(convertPricePerUnits(responses[0].json()['list'][itemcount]['store']['price'],responses[0].json()['list'][itemcount]['store']['retail_unit'],1))
 #   stores.append('Whole Foods')
 #   units.append(convertUnits(responses[0].json()['list'][itemcount]['store']['retail_unit']))
@@ -172,24 +229,40 @@ for itemcount in range(20):
 #   stores.append('Safeway')
 #   units.append(convertUnits(responses[2].json()['productsinfo'][itemcount]['unitOfMeasure']))
 
-groceriesTable = pivotSort(items_generic, items, prices, stores, storenames, units, itemcount)
+#cur.execute("INSERT INTO groceries (item, price, unit, store, price_date) VALUES ('Sample banana', 1.99, 'POUND', 'Sample store', '10:40:00 10/26/2019')")
+#conn.commit()
 
+#insertGroceriesToTableQuery()
+'''
+
+cur.close()
+
+'''
+groceriesTable = pivotSort(items_generic, items, prices, stores, storenames, units, itemcount)
+'''
+
+'''
 # Debugging
 # print(groceriesTable)
 # print(items_generic)
 # print(organic_arr)
+'''
 
+conn.close()
+
+'''
 # Home page routing
 @app.route("/")
 @app.route("/home")
-def home():
-    return render_template('home.html', groceries=groceriesTable, headerRow=headerRow)
-
-# Unsorted table
-@app.route("/unsorted")
 def unsorted():
-    return render_template('unsorted.html', groceries=zip(items, prices, stores, units))
+    return render_template('home.html', groceries=zip(items, prices, stores, units))
 
+@app.route("/pivot")
+def home():
+    return render_template('pivot.html', groceries=groceriesTable, headerRow=headerRow)
 # Enable debugging when running
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port='9001', debug=True)
+'''
+
+print("Script complete")
