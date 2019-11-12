@@ -46,6 +46,8 @@ storenames = []
 itemAccessKeys = []
 priceAccessKeys = []
 unitAccessKeys = []
+isOnSaleAccessKeys = []
+salePriceAccessKeys = []
 storeZipCodes = []
 index = 0
 numberOfStores = 5
@@ -69,6 +71,8 @@ for apiurl in data_dict['apiURL']:
     itemAccessKeys.append(apiurl['itemAccessKeys'])
     priceAccessKeys.append(apiurl['priceAccessKeys'])
     unitAccessKeys.append(apiurl['unitAccessKeys'])
+    isOnSaleAccessKeys.append(apiurl['isOnSaleAccessKeys'])
+    salePriceAccessKeys.append(apiurl['salePriceAccessKeys'])
     storeZipCodes.append(apiurl['zipCode'])
     index += 1
 
