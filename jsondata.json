@@ -6,8 +6,11 @@
       "itemAccessKeys": ["list","apiItemIndex","name"],
       "priceAccessKeys": ["list","apiItemIndex","store","price"],
       "unitAccessKeys": ["list","apiItemIndex","store","retail_unit"],
-      "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
-      "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"],
+      "saleAccessKeysExist":
+        {
+          "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
+          "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"]
+        },
       "zipCode": "95126"
     },
     {
@@ -16,8 +19,11 @@
       "itemAccessKeys": ["list","apiItemIndex","name"],
       "priceAccessKeys": ["list","apiItemIndex","store","price"],
       "unitAccessKeys": ["list","apiItemIndex","store","retail_unit"],
-      "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
-      "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"],
+      "saleAccessKeysExist":
+        {
+          "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
+          "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"]
+        },
       "zipCode": "97209"
     },
     {
@@ -26,8 +32,11 @@
       "itemAccessKeys": ["list","apiItemIndex","name"],
       "priceAccessKeys": ["list","apiItemIndex","store","price"],
       "unitAccessKeys": ["list","apiItemIndex","store","retail_unit"],
-      "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
-      "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"],
+      "saleAccessKeysExist":
+        {
+          "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
+          "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"]
+        },
       "zipCode": "95118"
     },
     {
@@ -36,8 +45,11 @@
       "itemAccessKeys": ["list","apiItemIndex","name"],
       "priceAccessKeys": ["list","apiItemIndex","store","price"],
       "unitAccessKeys": ["list","apiItemIndex","store","retail_unit"],
-      "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
-      "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"],
+      "saleAccessKeysExist":
+        {
+          "isOnSaleAccessKeys": ["list","apiItemIndex","store","onSale"],
+          "salePriceAccessKeys": ["list","apiItemIndex","store","onSale","price"]
+        },
       "zipCode": "04101"
     },
     {
@@ -46,6 +58,7 @@
       "itemAccessKeys": ["productsinfo","apiItemIndex","description"],
       "priceAccessKeys": ["productsinfo","apiItemIndex","pricePer"],
       "unitAccessKeys": ["productsinfo","apiItemIndex","unitOfMeasure"],
+      "saleAccessKeysExist": null,
       "zipCode": "95050"
     }
   ],
