@@ -53,13 +53,40 @@
       "zipCode": "04101"
     },
     {
-      "name":"Safeway",
+      "name":"Safeway in 95050 (Santa Clara, CA)",
       "url":"https://shop.safeway.com/bin/safeway/product/aemaisle?aisleId=1_23_2&storeId=1483",
       "itemAccessKeys": ["productsinfo","apiItemIndex","description"],
       "priceAccessKeys": ["productsinfo","apiItemIndex","pricePer"],
       "unitAccessKeys": ["productsinfo","apiItemIndex","unitOfMeasure"],
       "saleAccessKeysExist": null,
       "zipCode": "95050"
+    },
+    {
+      "name":"Safeway in 97229 (Portland, OR)",
+      "url":"https://shop.safeway.com/bin/safeway/product/aemaisle?aisleId=1_23_2&storeId=1525",
+      "itemAccessKeys": ["productsinfo","apiItemIndex","description"],
+      "priceAccessKeys": ["productsinfo","apiItemIndex","pricePer"],
+      "unitAccessKeys": ["productsinfo","apiItemIndex","unitOfMeasure"],
+      "saleAccessKeysExist": null,
+      "zipCode": "97229"
+    },
+    {
+      "name":"Safeway in 22207 (Arlington, VA)",
+      "url":"https://shop.safeway.com/bin/safeway/product/aemaisle?aisleId=1_23_2&storeId=3250",
+      "itemAccessKeys": ["productsinfo","apiItemIndex","description"],
+      "priceAccessKeys": ["productsinfo","apiItemIndex","pricePer"],
+      "unitAccessKeys": ["productsinfo","apiItemIndex","unitOfMeasure"],
+      "saleAccessKeysExist": null,
+      "zipCode": "22207"
+    },
+    {
+      "name":"Safeway in 96816 (Honolulu, HI)",
+      "url":"https://shop.safeway.com/bin/safeway/product/aemaisle?aisleId=1_23_2&storeId=2944",
+      "itemAccessKeys": ["productsinfo","apiItemIndex","description"],
+      "priceAccessKeys": ["productsinfo","apiItemIndex","pricePer"],
+      "unitAccessKeys": ["productsinfo","apiItemIndex","unitOfMeasure"],
+      "saleAccessKeysExist": null,
+      "zipCode": "96816"
     }
   ],
   "genericItems": [

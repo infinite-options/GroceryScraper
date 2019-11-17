@@ -35,9 +35,7 @@ json_data = 'jsondata.json'
 
 # Initialize data structures for json data
 responses = []
-
 responseIndex = 0
-numberOfStores = 5
 numberOfItemsPerStore = 20
 
 # Hashmaps of access keys and store info
@@ -66,6 +64,9 @@ for apiurl in data_dict['apiURL']:
         accessKeyDict['isOnSaleAccessKeys'].append(None)
         accessKeyDict['salePriceAccessKeys'].append(None)
 
+# Set number of stores
+numberOfStores = responseIndex
+
 # Get current date and time
 def getCurrentDateAndTime():
     now = datetime.now()
@@ -88,13 +89,12 @@ def getKeys(data, keys, apiItemIndex):
 #       print(key)
     return data
 
-'''
+# Not working as of 11/17/19
 def checkItemSale(accessKeyDict, storeindex, itemcount):
     if accessKeyDict['isOnSaleAccessKeys'] is not None:
         if getKeys(responses[storeindex].json(), accessKeyDict['isOnSaleAccessKeys'][storeindex], itemcount) is not None:
             return getKeys(responses[storeindex].json(), accessKeyDict['salePriceAccessKeys'][storeindex], itemcount)
     return getKeys(responses[storeindex].json(), accessKeyDict['priceAccessKeys'][storeindex], itemcount)
-'''
 
 # Add items and prices
 mysql_insert_groceries_query = """INSERT INTO groceries (item, price, unit, store, zipcode, price_date)
