@@ -70,8 +70,8 @@ numberOfStores = responseIndex
 # Get current date and time
 def getCurrentDateAndTime():
     now = datetime.now()
-    # dd/mm/YY HH:MM:SS
-    return now.strftime("%m/%d/%Y %H:%M:%S")
+    # YYYY/mm/dd HH:MM:SS
+    return now.strftime("%Y/%m/%d %H:%M:%S")
 
 # Get access keys for a JSON
 def getKeys(data, keys, apiItemIndex):
