@@ -35,7 +35,7 @@ json_data = 'jsondata.json'
 
 # Initialize data structures for json data
 responses = []
-responseIndex = 0
+numberOfStores = 0                  # Also used as index for responses[]
 numberOfItemsPerStore = 20
 
 # Hashmaps of access keys and store info
@@ -49,9 +49,9 @@ with open(json_data, 'r') as data_f:
 # Organize API URLs
 for apiurl in data_dict['apiURL']:
     responses.append('')
-    responses[responseIndex] = requests.get(apiurl['url'])
-    responses[responseIndex].raise_for_status()
-    responseIndex += 1
+    responses[numberOfStores] = requests.get(apiurl['url'])
+    responses[numberOfStores].raise_for_status()
+    numberOfStores += 1
     storeInfo['storeNames'].append(apiurl['name'])
     storeInfo['storeZipCodes'].append(apiurl['zipCode'])
     accessKeyDict['itemAccessKeys'].append(apiurl['itemAccessKeys'])
@@ -63,9 +63,6 @@ for apiurl in data_dict['apiURL']:
     else:
         accessKeyDict['isOnSaleAccessKeys'].append(None)
         accessKeyDict['salePriceAccessKeys'].append(None)
-
-# Set number of stores
-numberOfStores = responseIndex
 
 # Get current date and time
 def getCurrentDateAndTime():
@@ -86,8 +83,14 @@ def getKeys(data, keys, apiItemIndex):
         if key == "apiItemIndex":
             key = apiItemIndex
         data = data[key]
-#       print(key)
     return data
+
+'''
+# Number of items in array of items from store API
+# itemArrayAccessKeys = ["list"] -- add in jsondata.json?
+def getNumberOfItems(data):
+    return len(data)
+'''
 
 # Not working as of 11/17/19
 def checkItemSale(accessKeyDict, storeindex, itemcount):
