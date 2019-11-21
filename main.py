@@ -22,13 +22,18 @@ else:
     print("Usage: Enter password for MySQL server as first command line argument")
     sys.exit(1)
 
+print("Connecting to RDS...")
+
 # RDS connection
 conn = pymysql.connect( RDS_HOST,
                         user=RDS_USER,
                         port=RDS_PORT,
                         passwd=RDS_PW,
                         db=RDS_DB)
+print("Connected to RDS successfully.")
+
 cur = conn.cursor()
+print("Initialized cursor.")
 
 # JSON data file
 json_data = 'jsondata.json'
@@ -36,15 +41,19 @@ json_data = 'jsondata.json'
 # Initialize data structures for json data
 responses = []
 numberOfStores = 0                  # Also used as index for responses[]
-numberOfItemsPerStore = 20
+#numberOfItemsPerStore = 20
 
 # Hashmaps of access keys and store info
-accessKeyDict = {'itemAccessKeys': [], 'priceAccessKeys': [], 'unitAccessKeys': [], 'isOnSaleAccessKeys': [], 'salePriceAccessKeys': []}
+accessKeyDict = {'itemArrayAccessKeys': [], 'itemAccessKeys': [], 'priceAccessKeys': [], 'unitAccessKeys': [], 'isOnSaleAccessKeys': [], 'salePriceAccessKeys': []}
 storeInfo = {'storeNames': [], 'storeZipCodes': []}
+
+print("Initializing data structures...")
 
 # Load JSON containing URLs of APIs of grocery stores
 with open(json_data, 'r') as data_f:
     data_dict = json.load(data_f)
+
+print("Opened JSON file successfully.")
 
 # Organize API URLs
 for apiurl in data_dict['apiURL']:
@@ -54,6 +63,7 @@ for apiurl in data_dict['apiURL']:
     numberOfStores += 1
     storeInfo['storeNames'].append(apiurl['name'])
     storeInfo['storeZipCodes'].append(apiurl['zipCode'])
+    accessKeyDict['itemArrayAccessKeys'].append(apiurl['itemArrayAccessKeys'])
     accessKeyDict['itemAccessKeys'].append(apiurl['itemAccessKeys'])
     accessKeyDict['priceAccessKeys'].append(apiurl['priceAccessKeys'])
     accessKeyDict['unitAccessKeys'].append(apiurl['unitAccessKeys'])
@@ -63,6 +73,11 @@ for apiurl in data_dict['apiURL']:
     else:
         accessKeyDict['isOnSaleAccessKeys'].append(None)
         accessKeyDict['salePriceAccessKeys'].append(None)
+
+#print(accessKeyDict['isOnSaleAccessKeys'])
+#print(accessKeyDict['salePriceAccessKeys'])
+
+print("Retrieved data from API calls to grocery stores.")
 
 # Get current date and time
 def getCurrentDateAndTime():
@@ -79,23 +94,24 @@ def getKeys(data, keys, apiItemIndex):
         return keys[1]
     '''
     
+    # Known bug: cannot iterate NoneType (be careful with null keys)
     for key in keys:
         if key == "apiItemIndex":
             key = apiItemIndex
+#       print(key)
         data = data[key]
     return data
 
-'''
 # Number of items in array of items from store API
-# itemArrayAccessKeys = ["list"] -- add in jsondata.json?
-def getNumberOfItems(data):
-    return len(data)
-'''
+def getNumberOfItems(storeindex):
+    numberOfItems = len(getKeys(responses[storeindex].json(), accessKeyDict['itemArrayAccessKeys'][storeindex], 0))
+#   print(numberOfItems)
+    return numberOfItems
 
-# Not working as of 11/17/19
+# Return price of item after checking if item is on sale
 def checkItemSale(accessKeyDict, storeindex, itemcount):
-    if accessKeyDict['isOnSaleAccessKeys'] is not None:
-        if getKeys(responses[storeindex].json(), accessKeyDict['isOnSaleAccessKeys'][storeindex], itemcount) is not None:
+    if accessKeyDict['isOnSaleAccessKeys'][storeindex]:
+        if getKeys(responses[storeindex].json(), accessKeyDict['isOnSaleAccessKeys'][storeindex], itemcount):
             return getKeys(responses[storeindex].json(), accessKeyDict['salePriceAccessKeys'][storeindex], itemcount)
     return getKeys(responses[storeindex].json(), accessKeyDict['priceAccessKeys'][storeindex], itemcount)
 
@@ -103,20 +119,28 @@ def checkItemSale(accessKeyDict, storeindex, itemcount):
 mysql_insert_groceries_query = """INSERT INTO groceries (item, price, unit, store, zipcode, price_date)
                         VALUES (%s, %s, %s, %s, %s, %s) """
 
-for itemcount in range(numberOfItemsPerStore):
-    for storeindex in range(numberOfStores):
+print("Inserting to RDS...")
+
+for storeindex in range(numberOfStores):
+#   print("STORE")
+#   print(storeindex)
+#    for itemcount in range(numberOfItemsPerStore):
+    for itemcount in range(getNumberOfItems(storeindex)):
         itemToAppend = getKeys(responses[storeindex].json(), accessKeyDict['itemAccessKeys'][storeindex], itemcount)
         unitsToAppend = getKeys(responses[storeindex].json(), accessKeyDict['unitAccessKeys'][storeindex], itemcount)
-#        priceToAppend = checkItemSale(accessKeyDict, storeindex, itemcount)
-        priceToAppend = getKeys(responses[storeindex].json(), accessKeyDict['priceAccessKeys'][storeindex], itemcount)
+        priceToAppend = checkItemSale(accessKeyDict, storeindex, itemcount)
+#        priceToAppend = getKeys(responses[storeindex].json(), accessKeyDict['priceAccessKeys'][storeindex], itemcount)
         storeToAppend = storeInfo['storeZipCodes'][storeindex]
         insertTuple = (itemToAppend, priceToAppend, unitsToAppend, storeInfo['storeNames'][storeindex], storeToAppend, getCurrentDateAndTime())
         cur.execute(mysql_insert_groceries_query, insertTuple)
 
 conn.commit()
+print("Committed insertion to RDS.")
 
 cur.close()
+print("Cursor closed.")
 
 conn.close()
+print("Connection to RDS closed.")
 
 print("Script complete")
