@@ -25,11 +25,11 @@ else:
 print("Connecting to RDS...")
 
 # RDS connection
-conn = pymysql.connect( RDS_HOST,
-                        user=RDS_USER,
-                        port=RDS_PORT,
-                        passwd=RDS_PW,
-                        db=RDS_DB)
+conn = pymysql.connect(RDS_HOST,
+                       user=RDS_USER,
+                       port=RDS_PORT,
+                       passwd=RDS_PW,
+                       db=RDS_DB)
 print("Connected to RDS successfully.")
 
 cur = conn.cursor()
@@ -44,7 +44,8 @@ numberOfStores = 0                  # Also used as index for responses[]
 #numberOfItemsPerStore = 20
 
 # Hashmaps of access keys and store info
-accessKeyDict = {'itemArrayAccessKeys': [], 'itemAccessKeys': [], 'priceAccessKeys': [], 'unitAccessKeys': [], 'isOnSaleAccessKeys': [], 'salePriceAccessKeys': []}
+accessKeyDict = {'itemArrayAccessKeys': [], 'itemAccessKeys': [], 'priceAccessKeys': [
+], 'unitAccessKeys': [], 'isOnSaleAccessKeys': [], 'salePriceAccessKeys': [], 'idAccessKeys': []}
 storeInfo = {'storeNames': [], 'storeZipCodes': []}
 
 print("Initializing data structures...")
@@ -67,33 +68,39 @@ for apiurl in data_dict['apiURL']:
     accessKeyDict['itemAccessKeys'].append(apiurl['itemAccessKeys'])
     accessKeyDict['priceAccessKeys'].append(apiurl['priceAccessKeys'])
     accessKeyDict['unitAccessKeys'].append(apiurl['unitAccessKeys'])
+    accessKeyDict['idAccessKeys'].append(apiurl['idAccessKeys'])
     if apiurl['saleAccessKeysExist']:
-        accessKeyDict['isOnSaleAccessKeys'].append(apiurl['saleAccessKeysExist']['isOnSaleAccessKeys'])
-        accessKeyDict['salePriceAccessKeys'].append(apiurl['saleAccessKeysExist']['salePriceAccessKeys'])
+        accessKeyDict['isOnSaleAccessKeys'].append(
+            apiurl['saleAccessKeysExist']['isOnSaleAccessKeys'])
+        accessKeyDict['salePriceAccessKeys'].append(
+            apiurl['saleAccessKeysExist']['salePriceAccessKeys'])
     else:
         accessKeyDict['isOnSaleAccessKeys'].append(None)
         accessKeyDict['salePriceAccessKeys'].append(None)
 
-#print(accessKeyDict['isOnSaleAccessKeys'])
-#print(accessKeyDict['salePriceAccessKeys'])
+# print(accessKeyDict['isOnSaleAccessKeys'])
+# print(accessKeyDict['salePriceAccessKeys'])
 
 print("Retrieved data from API calls to grocery stores.")
 
 # Get current date and time
+
+
 def getCurrentDateAndTime():
     now = datetime.now()
     # YYYY/mm/dd HH:MM:SS
     return now.strftime("%Y/%m/%d %H:%M:%S")
 
 # Get access keys for a JSON
+
+
 def getKeys(data, keys, apiItemIndex):
-    
     '''
     # Temporary fix for APIs missing data (i.e. Target units), fix ASAP
     if keys[0] == "N/A":
         return keys[1]
     '''
-    
+
     # Known bug: cannot iterate NoneType (be careful with null keys)
     for key in keys:
         if key == "apiItemIndex":
@@ -103,35 +110,46 @@ def getKeys(data, keys, apiItemIndex):
     return data
 
 # Number of items in array of items from store API
+
+
 def getNumberOfItems(storeindex):
-    numberOfItems = len(getKeys(responses[storeindex].json(), accessKeyDict['itemArrayAccessKeys'][storeindex], 0))
+    numberOfItems = len(getKeys(responses[storeindex].json(
+    ), accessKeyDict['itemArrayAccessKeys'][storeindex], 0))
 #   print(numberOfItems)
     return numberOfItems
 
 # Return price of item after checking if item is on sale
+
+
 def checkItemSale(accessKeyDict, storeindex, itemcount):
     if accessKeyDict['isOnSaleAccessKeys'][storeindex]:
         if getKeys(responses[storeindex].json(), accessKeyDict['isOnSaleAccessKeys'][storeindex], itemcount):
             return getKeys(responses[storeindex].json(), accessKeyDict['salePriceAccessKeys'][storeindex], itemcount)
     return getKeys(responses[storeindex].json(), accessKeyDict['priceAccessKeys'][storeindex], itemcount)
 
+
 # Add items and prices
-mysql_insert_groceries_query = """INSERT INTO groceries (item, price, unit, store, zipcode, price_date)
-                        VALUES (%s, %s, %s, %s, %s, %s) """
+mysql_insert_groceries_query = """INSERT INTO groceries (item, market_id, price, unit, store, zipcode, price_date)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s) """
 
 print("Inserting to RDS...")
 
 for storeindex in range(numberOfStores):
-#   print("STORE")
-#   print(storeindex)
-#    for itemcount in range(numberOfItemsPerStore):
+    #   print("STORE")
+    #   print(storeindex)
+    #    for itemcount in range(numberOfItemsPerStore):
     for itemcount in range(getNumberOfItems(storeindex)):
-        itemToAppend = getKeys(responses[storeindex].json(), accessKeyDict['itemAccessKeys'][storeindex], itemcount)
-        unitsToAppend = getKeys(responses[storeindex].json(), accessKeyDict['unitAccessKeys'][storeindex], itemcount)
+        itemToAppend = getKeys(responses[storeindex].json(
+        ), accessKeyDict['itemAccessKeys'][storeindex], itemcount)
+        unitsToAppend = getKeys(responses[storeindex].json(
+        ), accessKeyDict['unitAccessKeys'][storeindex], itemcount)
         priceToAppend = checkItemSale(accessKeyDict, storeindex, itemcount)
 #        priceToAppend = getKeys(responses[storeindex].json(), accessKeyDict['priceAccessKeys'][storeindex], itemcount)
         storeToAppend = storeInfo['storeZipCodes'][storeindex]
-        insertTuple = (itemToAppend, priceToAppend, unitsToAppend, storeInfo['storeNames'][storeindex], storeToAppend, getCurrentDateAndTime())
+        idToAppend = getKeys(responses[storeindex].json(
+        ), accessKeyDict['idAccessKeys'][storeindex], itemcount)
+        insertTuple = (itemToAppend, idToAppend, priceToAppend, unitsToAppend,
+                       storeInfo['storeNames'][storeindex], storeToAppend, getCurrentDateAndTime())
         cur.execute(mysql_insert_groceries_query, insertTuple)
 
 conn.commit()
