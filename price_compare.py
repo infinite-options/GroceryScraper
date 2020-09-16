@@ -82,6 +82,7 @@ def doPriceComparison(farm_unit, farm_price, market_unit, market_price):
 
 
 try:
+    # Add one more query to fetch item details from sf.items table
     item_id = '310-000030'
     item_name = 'Yellow Onion'
     farm_price = '1.25'
