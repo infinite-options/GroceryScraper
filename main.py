@@ -41,7 +41,7 @@ json_data = 'jsondata.json'
 # Initialize data structures for json data
 responses = []
 numberOfStores = 0                  # Also used as index for responses[]
-#numberOfItemsPerStore = 20
+# numberOfItemsPerStore = 20
 
 # Hashmaps of access keys and store info
 accessKeyDict = {'itemArrayAccessKeys': [], 'itemAccessKeys': [], 'priceAccessKeys': [
@@ -132,7 +132,7 @@ def checkItemSale(accessKeyDict, storeindex, itemcount):
 mysql_insert_groceries_query = """INSERT INTO groceries (item, market_id, price, unit, store, zipcode, price_date)
                         VALUES (%s, %s, %s, %s, %s, %s, %s) """
 
-print("Inserting to RDS...")
+print("Updating RDS...")
 
 for storeindex in range(numberOfStores):
     #   print("STORE")
@@ -148,12 +148,32 @@ for storeindex in range(numberOfStores):
         storeToAppend = storeInfo['storeZipCodes'][storeindex]
         idToAppend = getKeys(responses[storeindex].json(
         ), accessKeyDict['idAccessKeys'][storeindex], itemcount)
-        insertTuple = (itemToAppend, idToAppend, priceToAppend, unitsToAppend,
-                       storeInfo['storeNames'][storeindex], storeToAppend, getCurrentDateAndTime())
-        cur.execute(mysql_insert_groceries_query, insertTuple)
+        # print('Item: ', itemToAppend)
+        # print('id: ', idToAppend)
+        # print('price: ', priceToAppend)
+        # print('unit: ', unitsToAppend)
+        # print('store: ', storeInfo['storeNames'][storeindex])
+        # query to check if id is present in table
+
+        query = """SELECT * FROM groceries WHERE market_id = %s AND store = %s AND zipcode = %s;"""
+        cur.execute(
+            query, (idToAppend, storeInfo['storeNames'][storeindex], storeToAppend))
+        match = cur.fetchone()
+        if match != None:
+            print("Item already exists!!!")
+            update_query = """UPDATE groceries SET price = %s, price_date = %s WHERE market_id = %s;"""
+            values_to_insert = (
+                priceToAppend, getCurrentDateAndTime(), idToAppend)
+            cur.execute(update_query, values_to_insert)
+            print("Updated price successfully!")
+        else:
+            insertTuple = (itemToAppend, idToAppend, priceToAppend, unitsToAppend,
+                           storeInfo['storeNames'][storeindex], storeToAppend, getCurrentDateAndTime())
+            cur.execute(mysql_insert_groceries_query, insertTuple)
+            print('Inserted new tuple!')
 
 conn.commit()
-print("Committed insertion to RDS.")
+print("Committed changes to RDS.")
 
 cur.close()
 print("Cursor closed.")

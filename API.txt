@@ -1,0 +1,22 @@
+1) Whole Foods San Jose Alameda - store 10259
+
+Dairy & Eggs: https://products.wholefoodsmarket.com/api/search?sort=relevance&store=10259&skip=0&filters=%5B%7B%22ns%22%3A%22category%22%2C%22key%22%3A%22dairy-eggs%22%2C%22value%22%3A%22dairy-eggs%22%7D%5D
+Produce: https://products.wholefoodsmarket.com/api/search?sort=relevance&store=10259&skip=0&filters=%5B%7B%22ns%22%3A%22category%22%2C%22key%22%3A%22produce%22%2C%22value%22%3A%22produce%22%7D%5D
+Prepared Meals: https://products.wholefoodsmarket.com/api/search?sort=relevance&store=10259&skip=0&filters=%5B%7B%22ns%22%3A%22category%22%2C%22key%22%3A%22prepared-foods%22%2C%22value%22%3A%22prepared-foods%22%7D%5D
+Bakery: https://products.wholefoodsmarket.com/api/search?sort=relevance&store=10259&skip=0&filters=%5B%7B%22ns%22%3A%22category%22%2C%22key%22%3A%22breads-rolls-bakery%22%2C%22value%22%3A%22breads-rolls-bakery%22%7D%5D
+
+Here, in all the api response will return only 20 products at a time. You need to look at the "total" value in API response and if it is more than 20,
+you need to again request API with skip value in increments of 20 everytime, till all the prodcuts are not returned.
+
+Also, to change store, alter the value of store in url.
+
+2) Luckys
+Q) How to get department ids and aisle number:
+A) https://shop.luckysupermarkets.com/v3/containers/lucky-supermarkets/browse_departments?source=web&cache_key=0a6933-26344-t-78f
+
+Generic API url:
+https://shop.luckysupermarkets.com/v3/retailers/542/module_data/departmentaisle_18438_97306?page=2&per=100
+
+Here, 18438 is department id i.e Produce and 97306 is category under Produce i.e Fresh Vegetables
+
+Query parameters: page, per
