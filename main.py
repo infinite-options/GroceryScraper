@@ -129,7 +129,7 @@ def checkItemSale(accessKeyDict, storeindex, itemcount):
 
 
 # Add items and prices
-mysql_insert_groceries_query = """INSERT INTO groceries (item, market_id, price, unit, store, zipcode, price_date)
+mysql_insert_groceries_query = """INSERT INTO groceries (item, item_id, price, unit, store, zipcode, price_date)
                         VALUES (%s, %s, %s, %s, %s, %s, %s) """
 
 print("Updating RDS...")
@@ -155,13 +155,13 @@ for storeindex in range(numberOfStores):
         # print('store: ', storeInfo['storeNames'][storeindex])
         # query to check if id is present in table
 
-        query = """SELECT * FROM groceries WHERE market_id = %s AND store = %s AND zipcode = %s;"""
+        query = """SELECT * FROM groceries WHERE item_id = %s AND store = %s AND zipcode = %s;"""
         cur.execute(
             query, (idToAppend, storeInfo['storeNames'][storeindex], storeToAppend))
         match = cur.fetchone()
         if match != None:
             print("Item already exists!!!")
-            update_query = """UPDATE groceries SET price = %s, price_date = %s WHERE market_id = %s;"""
+            update_query = """UPDATE groceries SET price = %s, price_date = %s WHERE item_id = %s;"""
             values_to_insert = (
                 priceToAppend, getCurrentDateAndTime(), idToAppend)
             cur.execute(update_query, values_to_insert)
