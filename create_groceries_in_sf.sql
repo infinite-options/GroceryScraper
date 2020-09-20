@@ -1,4 +1,4 @@
-use pricing;
+use sf;
 drop table if exists groceries;
 create table if not exists groceries (
 	item_name varchar(255),

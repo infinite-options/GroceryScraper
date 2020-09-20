@@ -1,0 +1,5070 @@
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>item_uid</th>
+      <th>created_at</th>
+      <th>itm_business_uid</th>
+      <th>item_name_x</th>
+      <th>item_status</th>
+      <th>item_type</th>
+      <th>item_desc</th>
+      <th>item_unit</th>
+      <th>item_price</th>
+      <th>item_sizes</th>
+      <th>favorite</th>
+      <th>item_photo</th>
+      <th>exp_date</th>
+      <th>item_name_y</th>
+      <th>item_id</th>
+      <th>price</th>
+      <th>unit</th>
+      <th>store</th>
+      <th>zipcode</th>
+      <th>price_date</th>
+      <th>abb_item_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>310-000001</td>
+      <td>2019-11-28 08:24:47</td>
+      <td>200-000001</td>
+      <td>Roasted Veggie Salad w/ Avocado Dressing</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>310-000002</td>
+      <td>2019-11-28 08:29:38</td>
+      <td>200-000001</td>
+      <td>Lentil Arugula Salad</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>310-000003</td>
+      <td>2019-11-28 08:39:56</td>
+      <td>200-000001</td>
+      <td>Almond Butter Smoothie</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>8.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>310-000004</td>
+      <td>2019-11-28 08:36:26</td>
+      <td>200-000001</td>
+      <td>Jalapeno Corn Chowder</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>310-000005</td>
+      <td>2019-11-28 08:23:17</td>
+      <td>200-000001</td>
+      <td>Jackfruit Jambalaya</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>310-000006</td>
+      <td>2019-11-28 08:27:02</td>
+      <td>200-000001</td>
+      <td>White Bean Kale Soup</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>310-000007</td>
+      <td>2019-11-28 08:34:50</td>
+      <td>200-000001</td>
+      <td>Broccoli Mac n "Cheez"</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>310-000008</td>
+      <td>2019-11-28 08:41:11</td>
+      <td>200-000001</td>
+      <td>The Energizer Smoothie</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>8.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>310-000009</td>
+      <td>2019-11-28 08:28:35</td>
+      <td>200-000001</td>
+      <td>Credo Nachos</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>310-000010</td>
+      <td>2019-11-28 08:38:09</td>
+      <td>200-000001</td>
+      <td>The Original Smoothie</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>8.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>310-000011</td>
+      <td>2019-11-28 08:32:45</td>
+      <td>200-000001</td>
+      <td>Pumpkin Spice Overnight Oats</td>
+      <td>None</td>
+      <td>meal</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>310-000013</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Garlic Onion Bagel</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>310-000014</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Whole Wheat Apricot Bagel</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>310-000015</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Celery Caraway Bagel</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>310-000016</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Dukkah Bagel</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>310-000017</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Sesame Bagel</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>310-000018</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Chocolate Hazelnut Bread</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>7.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>310-000019</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Zaatar Sumac Bagel</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>310-000020</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Apple Puff</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>310-000021</td>
+      <td>2019-10-02 22:22:27</td>
+      <td>200-000002</td>
+      <td>Superseed Bagel</td>
+      <td>None</td>
+      <td>bakery</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>310-000022</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Collards (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>310-000023</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Broccoli (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>310-000024</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Cauliflower (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>310-000025</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Iceberg Lettuce (each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>310-000026</td>
+      <td>2020-07-04 12:35:12</td>
+      <td>200-000003</td>
+      <td>White Corn (each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>310-000027</td>
+      <td>2020-07-04 12:24:17</td>
+      <td>200-000003</td>
+      <td>Red Bell Peppers (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>310-000028</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Red Beets (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>310-000029</td>
+      <td>2020-07-12 13:04:09</td>
+      <td>200-000003</td>
+      <td>$15 Dollar Variety Box (Save $5) Avocado, Gree...</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>15.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>310-000030</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Yellow Onions (per lb)</td>
+      <td>Past</td>
+      <td>vegetable</td>
+      <td>["Not Organic", "Vegan"]</td>
+      <td>lbs</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>310-000031</td>
+      <td>2020-07-12 19:49:57</td>
+      <td>200-000003</td>
+      <td>Purple Kale</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>310-000032</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Brussels Sprouts (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>310-000033</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Purple Cabbage</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>310-000034</td>
+      <td>2020-06-03 18:07:09</td>
+      <td>200-000003</td>
+      <td>Honey (24 oz)</td>
+      <td>None</td>
+      <td>other</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>25.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>310-000035</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Snap Peas (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>310-000036</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Radishes (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>310-000037</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Avocado (each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>116</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>310-000038</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Green Kale (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>310-000039</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Cilantro (Bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>310-000040</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Green Cabbage</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>310-000041</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Green Onions (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>310-000042</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Yellow Bell Pepper (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>43</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>310-000043</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Strawberries (per pound)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>108</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>310-000044</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Red Leaf Lettuce</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>310-000045</td>
+      <td>2020-07-12 12:49:02</td>
+      <td>200-000003</td>
+      <td>Juiceman Special (Save $7.50)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>310-000046</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Red Onions (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>310-000047</td>
+      <td>2020-05-03 22:31:34</td>
+      <td>200-000003</td>
+      <td>Blueberries (Per basket)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>310-000048</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Rainbow Chard (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>310-000049</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Green Beans (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>310-000050</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Fennel (each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>310-000051</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Roma Tomato (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>310-000052</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Artichoke (per head)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>310-000053</td>
+      <td>2020-07-04 12:32:30</td>
+      <td>200-000003</td>
+      <td>Anaheim Peppers (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>310-000054</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Dino Kale (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>310-000055</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Parsley (Bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>310-000056</td>
+      <td>2020-07-04 12:33:35</td>
+      <td>200-000003</td>
+      <td>Jalapeños (each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>0.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>310-000057</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Leeks (each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>15</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>310-000058</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Asparagus (Bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>310-000059</td>
+      <td>2020-07-04 12:08:26</td>
+      <td>200-000003</td>
+      <td>Poblano Peppers (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>310-000060</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Romaine Lettuce</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>310-000061</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Yukon Potatoes (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>310-000062</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Bell Peppers (per lb)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>310-000063</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Carrots (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>310-000064</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Rainbow Carrots (bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>310-000065</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Celery (Each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>310-000066</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Italian Zucchini (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>310-000067</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Napa Cabbage (Each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>310-000068</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Red Potato (per lb)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>310-000069</td>
+      <td>2020-06-03 18:01:14</td>
+      <td>200-000003</td>
+      <td>Organic Brown Eggs (Dozen)</td>
+      <td>None</td>
+      <td>other</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>10.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>310-000070</td>
+      <td>2020-07-11 20:00:11</td>
+      <td>200-000003</td>
+      <td>$20 Nextdoor Special (Save $7) Purple Kale, Ci...</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>20.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>310-000071</td>
+      <td>2020-07-04 12:40:51</td>
+      <td>200-000003</td>
+      <td>Pickled Cucumbers (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>310-000072</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Fava Beans (Per Pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>310-000073</td>
+      <td>2020-07-11 20:03:38</td>
+      <td>200-000003</td>
+      <td>Make Your Order a Weekly Subscription!</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>0.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>310-000074</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Green Bell Pepper (per pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.50</td>
+      <td>21</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>310-000075</td>
+      <td>2020-04-20 08:35:55</td>
+      <td>200-000003</td>
+      <td>Dandelion Greens (Bunch)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>310-000076</td>
+      <td>2020-07-21 03:03:08</td>
+      <td>200-000004</td>
+      <td>Grapes (per Pound)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>310-000077</td>
+      <td>2020-05-15 09:16:59</td>
+      <td>200-000004</td>
+      <td>Big Beef Tomatoes (per Ib)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>310-000078</td>
+      <td>2020-05-15 09:13:10</td>
+      <td>200-000004</td>
+      <td>Yellow Nectarines (per Ib)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>310-000079</td>
+      <td>2020-07-21 15:12:37</td>
+      <td>200-000004</td>
+      <td>Organic Whole Milk (Gallon)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>7.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>310-000080</td>
+      <td>2020-07-21 03:19:53</td>
+      <td>200-000004</td>
+      <td>Ciabatta Bread (Each)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>310-000081</td>
+      <td>2020-06-16 20:26:56</td>
+      <td>200-000004</td>
+      <td>Dutch Apple Pie (Each)</td>
+      <td>None</td>
+      <td>dessert</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>13.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>310-000082</td>
+      <td>2020-07-14 12:05:02</td>
+      <td>200-000004</td>
+      <td>Apple Pie (Each)</td>
+      <td>None</td>
+      <td>dessert</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>13.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>310-000083</td>
+      <td>2020-05-15 09:18:25</td>
+      <td>200-000004</td>
+      <td>Romaine Lettuce (per 3 small Lettuces)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>310-000084</td>
+      <td>2020-06-16 19:31:24</td>
+      <td>200-000004</td>
+      <td>Figs (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>7.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>310-000085</td>
+      <td>2020-05-15 09:22:20</td>
+      <td>200-000004</td>
+      <td>Cauliflower (per Ib)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>310-000086</td>
+      <td>2020-05-15 09:20:49</td>
+      <td>200-000004</td>
+      <td>Summer Squash (per Ib)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.99</td>
+      <td>7</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>310-000087</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>Santa Claus Melon (small)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>6.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>310-000088</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>Pluot (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>310-000089</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>Orange Flesh Honeydew</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>310-000090</td>
+      <td>2020-06-24 09:40:39</td>
+      <td>200-000004</td>
+      <td>Cherry Pie (Each)</td>
+      <td>None</td>
+      <td>dessert</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>13.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>310-000091</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>Red Grapes (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>310-000092</td>
+      <td>2020-06-16 20:25:47</td>
+      <td>200-000004</td>
+      <td>Boysenberry Pie (Each)</td>
+      <td>None</td>
+      <td>dessert</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>13.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>310-000093</td>
+      <td>2020-05-15 09:15:56</td>
+      <td>200-000004</td>
+      <td>Early Girl Tomatoes (per Ib)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>310-000094</td>
+      <td>2020-05-26 03:31:46</td>
+      <td>200-000004</td>
+      <td>Red Cherries</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>7.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>310-000095</td>
+      <td>2020-06-17 17:58:22</td>
+      <td>200-000004</td>
+      <td>Red Cherries (per Ib)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>7.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>310-000096</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>White Nectarines (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>310-000097</td>
+      <td>2020-06-16 20:38:00</td>
+      <td>200-000004</td>
+      <td>Apricot Pie (Each)</td>
+      <td>None</td>
+      <td></td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>13.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>310-000098</td>
+      <td>2020-07-21 02:59:14</td>
+      <td>200-000004</td>
+      <td>Red Flame Grapes (per Pound)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>310-000099</td>
+      <td>2020-05-15 09:12:00</td>
+      <td>200-000004</td>
+      <td>Apricots (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>9</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>310-000100</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>White Peaches (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>310-000101</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>Red Peach (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.25</td>
+      <td>1</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>100</th>
+      <td>310-000102</td>
+      <td>2020-05-25 23:27:21</td>
+      <td>200-000004</td>
+      <td>Yellow Peaches (per Ib)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <td>310-000103</td>
+      <td>2020-05-15 09:28:09</td>
+      <td>200-000004</td>
+      <td>Rainier Cherries (per Ib)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>7.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>310-000104</td>
+      <td>2020-05-15 09:22:58</td>
+      <td>200-000004</td>
+      <td>Broccoli (per Ib)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.99</td>
+      <td>7</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>310-000105</td>
+      <td>2020-07-21 03:05:58</td>
+      <td>200-000004</td>
+      <td>Watermelon (Each)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>5.99</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>310-000106</td>
+      <td>2020-05-08 11:59:36</td>
+      <td>200-000004</td>
+      <td>Red Peach (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>310-000107</td>
+      <td>2020-07-21 15:06:24</td>
+      <td>200-000004</td>
+      <td>Eggs (Dozen)</td>
+      <td>None</td>
+      <td></td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>6.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>310-000108</td>
+      <td>2020-06-24 09:44:13</td>
+      <td>200-000004</td>
+      <td>Croissant (Each)</td>
+      <td>None</td>
+      <td></td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>310-000109</td>
+      <td>2020-05-15 09:21:32</td>
+      <td>200-000004</td>
+      <td>Eggplants (per lb)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.99</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>310-000110</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Opo Gourd</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>0.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>310-000111</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Purple Bell Pepper</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>310-000112</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Eggplant</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>310-000113</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Cobra Hot Chili Pepper</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>["Fruit", "Vegan"]</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>112</th>
+      <td>310-000114</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Chayota</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>310-000115</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Kentucky Bean</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>310-000116</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Long Hot Chili Pepper (mild)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>310-000117</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Holy Basil (Hot Basil)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>116</th>
+      <td>310-000118</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Sunchoke Artichoke</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>310-000119</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Habanero Pepper</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>310-000120</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Winter Melon</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>310-000121</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Red Jalapeño Peppers</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>310-000122</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Green Prada Pea</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>310-000123</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Green Jalapeño Peppers</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>310-000124</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Snake Gourd</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>310-000125</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Thai Basil</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>310-000126</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Pumpkin Squash</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>310-000127</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Thai Chili Peppers</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>310-000128</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Purple Prada Pea</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>310-000129</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Italian Basil</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>310-000130</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Jicama</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <td>310-000131</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Green Bell Pepper</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>310-000132</td>
+      <td>2019-11-02 13:09:55</td>
+      <td>200-000005</td>
+      <td>Lemon Basil</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>310-000133</td>
+      <td>2019-09-19 14:09:55</td>
+      <td>200-000006</td>
+      <td>Squash</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>132</th>
+      <td>310-000134</td>
+      <td>2019-09-19 14:39:36</td>
+      <td>200-000006</td>
+      <td>Asparagus</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>5.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>310-000135</td>
+      <td>2019-09-21 15:50:28</td>
+      <td>200-000006</td>
+      <td>Eggplant</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>1</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>310-000136</td>
+      <td>2020-01-23 10:20:32</td>
+      <td>200-000006</td>
+      <td>New Meal</td>
+      <td>Deleted</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>15.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>310-000137</td>
+      <td>2019-09-23 23:10:34</td>
+      <td>200-000006</td>
+      <td>Strawberries (Certified Organic)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>5.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <td>310-000138</td>
+      <td>2020-02-05 15:24:37</td>
+      <td>200-000006</td>
+      <td>Red Bell Peppers (Certified Organic)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>310-000139</td>
+      <td>2020-08-06 17:48:38</td>
+      <td>200-000006</td>
+      <td>Manchester United Football Jersey (Medium)</td>
+      <td>None</td>
+      <td>other</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>25.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>310-000140</td>
+      <td>2019-09-21 15:50:32</td>
+      <td>200-000006</td>
+      <td>Red Onions (Certified Organic)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>310-000141</td>
+      <td>2019-09-23 23:10:34</td>
+      <td>200-000006</td>
+      <td>Fresh Carrots (Certified Organic)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>310-000142</td>
+      <td>2019-09-21 15:50:22</td>
+      <td>200-000006</td>
+      <td>Yellow Onions (Certified Organic)</td>
+      <td>Active</td>
+      <td>vegetable</td>
+      <td>["Certified Organic", "Vegan"]</td>
+      <td>lbs</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>310-000143</td>
+      <td>2019-09-23 23:10:34</td>
+      <td>200-000006</td>
+      <td>Green Bell Peppers (Certified Organic)</td>
+      <td>None</td>
+      <td>vegetable</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>2</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>310-000144</td>
+      <td>2020-08-06 17:47:55</td>
+      <td>200-000006</td>
+      <td>Chelsea Football Jersey (Small)</td>
+      <td>None</td>
+      <td>other</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>25.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>310-000145</td>
+      <td>2019-09-23 23:10:34</td>
+      <td>200-000006</td>
+      <td>Yellow Bell Pepper (Certified Organic)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>TRUE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>144</th>
+      <td>310-000146</td>
+      <td>2019-07-25 17:42:02</td>
+      <td>200-000007</td>
+      <td>Plum Jam</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>12.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>310-000147</td>
+      <td>2019-07-25 17:42:17</td>
+      <td>200-000007</td>
+      <td>Ghee</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>12.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>310-000148</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Zuccini</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>310-000149</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Heirloom Tomato</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>310-000150</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Mint</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>310-000151</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Curly Kale</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>310-000152</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Brussels Sprouts</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>310-000153</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Romaine Lettuce</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>152</th>
+      <td>310-000154</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yukon Gold Potato</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Organic Yellow Onion</td>
+      <td>B07QV6B5WV</td>
+      <td>1.49</td>
+      <td>POUND</td>
+      <td>Whole Foods San Jose Alameda</td>
+      <td>95126</td>
+      <td>2020/09/19 22:05:40</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Organic Yellow Onion</td>
+      <td>B07QV6B5WV</td>
+      <td>1.49</td>
+      <td>POUND</td>
+      <td>Whole Foods Pearl District Portland</td>
+      <td>97209</td>
+      <td>2020/09/19 22:05:42</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Organic Yellow Onion</td>
+      <td>B07QV6B5WV</td>
+      <td>1.49</td>
+      <td>POUND</td>
+      <td>Whole Foods San Jose Blossom Hill</td>
+      <td>95118</td>
+      <td>2020/09/19 22:05:44</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Organic Yellow Onion</td>
+      <td>B07QV6B5WV</td>
+      <td>1.49</td>
+      <td>POUND</td>
+      <td>Whole Foods Portland Maine</td>
+      <td>04101</td>
+      <td>2020/09/19 22:05:47</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>157</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onion</td>
+      <td>184450054</td>
+      <td>1.49</td>
+      <td>LB</td>
+      <td>Safeway in 95050 (Santa Clara, CA)</td>
+      <td>95050</td>
+      <td>2020/09/19 22:05:49</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>158</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onions Prepacked Bag - 3 Lb</td>
+      <td>184450030</td>
+      <td>1.33</td>
+      <td>LB</td>
+      <td>Safeway in 95050 (Santa Clara, CA)</td>
+      <td>95050</td>
+      <td>2020/09/19 22:05:51</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Organic Yellow Onion</td>
+      <td>184710074</td>
+      <td>1.00</td>
+      <td>LB</td>
+      <td>Safeway in 95050 (Santa Clara, CA)</td>
+      <td>95050</td>
+      <td>2020/09/19 22:05:56</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onion</td>
+      <td>184450054</td>
+      <td>0.69</td>
+      <td>LB</td>
+      <td>Safeway in 97229 (Portland, OR)</td>
+      <td>97229</td>
+      <td>2020/09/19 22:06:47</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>161</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onions Prepacked Bag - 3 Lb</td>
+      <td>184450030</td>
+      <td>1.00</td>
+      <td>LB</td>
+      <td>Safeway in 97229 (Portland, OR)</td>
+      <td>97229</td>
+      <td>2020/09/19 22:06:49</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>162</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onion</td>
+      <td>184450054</td>
+      <td>1.99</td>
+      <td>LB</td>
+      <td>Safeway in 22207 (Arlington, VA)</td>
+      <td>22207</td>
+      <td>2020/09/19 22:07:44</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onions Prepacked Bag - 3 Lb</td>
+      <td>184450030</td>
+      <td>1.16</td>
+      <td>LB</td>
+      <td>Safeway in 22207 (Arlington, VA)</td>
+      <td>22207</td>
+      <td>2020/09/19 22:07:45</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onion</td>
+      <td>184450054</td>
+      <td>2.59</td>
+      <td>LB</td>
+      <td>Safeway in 96816 (Honolulu, HI)</td>
+      <td>96816</td>
+      <td>2020/09/19 22:08:02</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Yellow Onions Prepacked Bag - 3 Lb</td>
+      <td>184450030</td>
+      <td>1.00</td>
+      <td>LB</td>
+      <td>Safeway in 96816 (Honolulu, HI)</td>
+      <td>96816</td>
+      <td>2020/09/19 22:08:03</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>310-000155</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Onion</td>
+      <td>Active</td>
+      <td></td>
+      <td>["Organic", "Vegan"]</td>
+      <td>lb</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>Organic Yellow Onion</td>
+      <td>184710074</td>
+      <td>1.50</td>
+      <td>LB</td>
+      <td>Safeway in 96816 (Honolulu, HI)</td>
+      <td>96816</td>
+      <td>2020/09/19 22:08:07</td>
+      <td>Yellow Onion</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>310-000156</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Rainbow Swiss Chard</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>310-000157</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Fennel</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>310-000158</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Dino Kale</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>310-000159</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Red Potatos</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>310-000160</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Garlic</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>310-000161</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Islander Bell Pepper</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>310-000162</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Jalapeño Peppers</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>310-000163</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Green Bell Pepper</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>310-000164</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Cabbage</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>310-000165</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Red Cherry Tomaotoes</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>177</th>
+      <td>310-000166</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Basil</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>178</th>
+      <td>310-000167</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Carrot</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>310-000168</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Red Leaf Lettuce</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>180</th>
+      <td>310-000169</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Russet Potato</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>310-000170</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Early Girl Tomato</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>310-000171</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Orange Cherry Tomatoes</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>183</th>
+      <td>310-000172</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Cilantro</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>184</th>
+      <td>310-000173</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Yellow Bell Pepper</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>310-000174</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Red Cabbage</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>310-000175</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Broccoli</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>310-000176</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>White Bell Pepper</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>310-000177</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Green Onion</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>310-000178</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Beets</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>310-000179</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Purple Cherry Tomatoes</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>310-000180</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Cauliflower</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>310-000181</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Red Bell Pepper</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>310-000182</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Habanero Pepper</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>3.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>310-000183</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Red Onion</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>310-000184</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Orange Bell Pepper</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>310-000185</td>
+      <td>2019-11-02 13:10:11</td>
+      <td>200-000008</td>
+      <td>Sweet Potato</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.75</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>310-000186</td>
+      <td>2019-11-17 08:34:00</td>
+      <td>200-000009</td>
+      <td>Cilantro (bunch)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>310-000187</td>
+      <td>2019-11-17 08:40:30</td>
+      <td>200-000009</td>
+      <td>Tomatoes (per lb)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>310-000188</td>
+      <td>2019-11-17 08:43:08</td>
+      <td>200-000009</td>
+      <td>Pluot (per lb)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>310-000189</td>
+      <td>2019-11-17 08:24:34</td>
+      <td>200-000009</td>
+      <td>Blueberries (Basket)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>201</th>
+      <td>310-000190</td>
+      <td>2019-11-17 08:35:42</td>
+      <td>200-000009</td>
+      <td>Poblano Peppers (per lb)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>310-000191</td>
+      <td>2019-11-17 08:29:04</td>
+      <td>200-000009</td>
+      <td>Fuji Apple (per lb)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>310-000192</td>
+      <td>2019-11-17 08:33:41</td>
+      <td>200-000009</td>
+      <td>Rosemary (bunch)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>204</th>
+      <td>310-000193</td>
+      <td>2019-11-17 08:38:03</td>
+      <td>200-000009</td>
+      <td>Natural Raw Almonds (per 1/2 lb)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>4.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>310-000194</td>
+      <td>2019-11-17 08:27:25</td>
+      <td>200-000009</td>
+      <td>Strawberries (Basket)</td>
+      <td>None</td>
+      <td>fruit</td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>4.00</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>310-000195</td>
+      <td>2019-11-17 08:42:27</td>
+      <td>200-000009</td>
+      <td>Beets (per lb)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>310-000196</td>
+      <td>2019-11-17 08:33:21</td>
+      <td>200-000009</td>
+      <td>Lavender (bunch)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>1.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>208</th>
+      <td>310-000197</td>
+      <td>2019-11-17 08:36:11</td>
+      <td>200-000009</td>
+      <td>Jalapeno Peppers (each)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>0.50</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>310-000198</td>
+      <td>2019-11-17 08:30:53</td>
+      <td>200-000009</td>
+      <td>Gala Apple (per lb)</td>
+      <td>None</td>
+      <td></td>
+      <td>{"sub_item": "1"}</td>
+      <td>None</td>
+      <td>2.25</td>
+      <td>0</td>
+      <td>FALSE</td>
+      <td>https://s3-us-west-1.amazonaws.com/servingnow/...</td>
+      <td>None</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>

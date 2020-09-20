@@ -10,10 +10,10 @@ import json
 import pymysql
 
 # RDS
-RDS_HOST = 'pm-mysqldb.cxjnrciilyjq.us-west-1.rds.amazonaws.com'
+RDS_HOST = 'io-mysqldb8.cxjnrciilyjq.us-west-1.rds.amazonaws.com'
 RDS_PORT = 3306
 RDS_USER = 'admin'
-RDS_DB = 'pricing'
+RDS_DB = 'sf'
 
 # RDS PASSWORD
 if len(sys.argv) == 2:

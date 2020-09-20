@@ -12,15 +12,15 @@ function usage () {
 if [[ $# -eq 1 ]]; then
     case $1 in
     -l | --login)
-        mysql -h pm-mysqldb.cxjnrciilyjq.us-west-1.rds.amazonaws.com -u admin -D pricing -p
+        mysql -h io-mysqldb8.cxjnrciilyjq.us-west-1.rds.amazonaws.com -u admin -D sf -p
         exit 1
         ;;
     -c | --create-pricing-tables)
-        mysql -h pm-mysqldb.cxjnrciilyjq.us-west-1.rds.amazonaws.com -u admin -D pricing -p < create_groceries_in_pricing.sql
+        mysql -h io-mysqldb8.cxjnrciilyjq.us-west-1.rds.amazonaws.com -u admin -D sf -p < create_groceries_in_sf.sql
         exit 1
         ;;
     -cp | --create-price_competitive-table)
-        mysql -h pm-mysqldb.cxjnrciilyjq.us-west-1.rds.amazonaws.com -u admin -D pricing -p < create_price_competitive_in_pricing.sql
+        mysql -h io-mysqldb8.cxjnrciilyjq.us-west-1.rds.amazonaws.com -u admin -D sf -p < create_price_competitive_in_sf.sql
         exit 1
     *)
         usage

@@ -12,10 +12,9 @@ import pymysql
 import pandas as pd
 
 # RDS
-RDS_HOST = 'pm-mysqldb.cxjnrciilyjq.us-west-1.rds.amazonaws.com'
+RDS_HOST = 'io-mysqldb8.cxjnrciilyjq.us-west-1.rds.amazonaws.com'
 RDS_PORT = 3306
 RDS_USER = 'admin'
-RDS_DB_pricing = 'pricing'
 RDS_DB_sf = 'sf'
 
 # RDS PASSWORD
@@ -26,18 +25,6 @@ else:
     sys.exit(1)
 
 print("Connecting to RDS...")
-
-# RDS connection
-print("Connecting to pricing...")
-conn_pricing = pymysql.connect(RDS_HOST,
-                               user=RDS_USER,
-                               port=RDS_PORT,
-                               passwd=RDS_PW,
-                               db=RDS_DB_pricing)
-print("Connected to RDS successfully.")
-
-cur_pricing = conn_pricing.cursor()
-print("Initialized cursor.")
 
 print("Connecting to sf...")
 conn_sf = pymysql.connect(RDS_HOST,
@@ -50,7 +37,7 @@ print("Connected to RDS successfully.")
 cur_sf = conn_sf.cursor()
 print("Initialized cursor.")
 
-mysql_insert_price_compare_query = """INSERT INTO price_competitive_join 
+mysql_insert_price_compare_query = """INSERT INTO price_competitive
 (item_id, item_name, farm_price, farm_unit, market_name, market_item_name, market_item_id, market_price, market_unit, market_zipcode, market_price_date, is_item_same, is_competitive)
 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) """
 
@@ -59,6 +46,7 @@ def doPriceComparison(farm_unit, farm_price, market_unit, market_price):
     # get base conversion from sf.conversion_units of farm_unit and farm_price
     # if base unit is same then only price is compared
     print("IN DO COMPARISON")
+
     if type(farm_unit) is str and type(market_unit) is str:
         query = """SELECT recipe_unit, conversion_ratio, common_unit FROM conversion_units WHERE recipe_unit = %s;"""
         cur_sf.execute(query, farm_unit.lower())
@@ -69,7 +57,10 @@ def doPriceComparison(farm_unit, farm_price, market_unit, market_price):
         # print('market_base_unit: ', market_base_unit)
 
         if farm_base_unit[2] == market_base_unit[2]:
-            if farm_price/farm_base_unit[1] < market_price/market_base_unit[1]:
+            # print("IN IF -----------------------")
+            # print("farm price: ----", farm_price/Decimal(farm_base_unit[1]))
+            # print("type: ------", type(farm_base_unit[1]))
+            if farm_price/Decimal(farm_base_unit[1]) < market_price/Decimal(market_base_unit[1]):
                 return "YES"
             return "NO"
         else:
@@ -82,7 +73,7 @@ def doPriceComparison(farm_unit, farm_price, market_unit, market_price):
 
 try:
     query_groceries = """SELECT * from groceries;"""
-    groceries_df = pd.read_sql(query_groceries, conn_pricing)
+    groceries_df = pd.read_sql(query_groceries, conn_sf)
     # print(groceries_df)
     query_items = """select * from items;"""
     items_df = pd.read_sql(query_items, conn_sf)
@@ -97,8 +88,9 @@ try:
     # text_file = open("index.html", "w")
     # text_file.write(html)
     # text_file.close()
+    print('merged successfully!!!!!!!!!!!')
     for index, row in result_df.iterrows():
-        print(row.itm_business_id)
+        print(row.itm_business_uid)
         print('row: ', row)
         farm_price = row.item_price
         print('farm_price: ', farm_price)
@@ -111,18 +103,16 @@ try:
         # print('item_name: ', row.item)
         is_competitve = doPriceComparison(
             farm_unit, Decimal(farm_price), market_unit, Decimal(market_price))
-        insertTuple = (str(row.item_id_x), str(row.item_name_x),
-                       str(row.item_price), str(row.item_unit), str(row.store), str(row.item_name_y), str(row.item_id_y), str(row.price), str(row.unit), str(row.zipcode), str(row.price_date), "YES", is_competitve)
-        cur_pricing.execute(mysql_insert_price_compare_query, insertTuple)
-    conn_pricing.commit()
+        insertTuple = (str(row.item_uid), str(row.item_name_x),
+                       str(row.item_price), str(row.item_unit), str(row.store), str(row.item_name_y), str(row.item_id), str(row.price), str(row.unit), str(row.zipcode), str(row.price_date), "YES", is_competitve)
+        cur_sf.execute(mysql_insert_price_compare_query, insertTuple)
+    conn_sf.commit()
 except:
     print("Exception thrown!!!!!!!!!")
 
-cur_pricing.close()
 cur_sf.close()
 print("Cursor closed.")
 
-conn_pricing.close()
 conn_sf.close()
 print("Connection to RDS closed.")
 

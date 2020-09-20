@@ -1,4 +1,4 @@
-use pricing;
+use sf;
 drop table if exists price_competitive;
 create table if not exists price_competitive (
 	ID INT(11) NOT NULL AUTO_INCREMENT,
