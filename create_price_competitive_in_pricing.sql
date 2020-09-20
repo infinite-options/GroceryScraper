@@ -14,5 +14,6 @@ create table if not exists price_competitive (
     market_zipcode varchar(45),
     market_price_date varchar(225),
     is_item_same varchar(45),
-    is_competitive varchar(45)
+    is_competitive varchar(45),
+    PRIMARY KEY (ID)
 );

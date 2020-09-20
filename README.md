@@ -17,6 +17,5 @@ Program automatically identifies duplicates entry and will only insert if the it
 
 Explanation: Use this command to login and create groceries and price_competitive table in pricing DB.
 
-**Run 'python3 price_compare.py' with password to MySQL server for RDS as first argument**
-
+**Run 'python3 price_compare.py' with password to MySQL server for RDS as first argument** OR **Run 'python3 price_compare_join.py' with password to MySQL server for RDS as first argument**
 Explanation: Program performs price comparison between the _Serving Fresh item_ and _market item_.

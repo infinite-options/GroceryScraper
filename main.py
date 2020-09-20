@@ -129,7 +129,7 @@ def checkItemSale(accessKeyDict, storeindex, itemcount):
 
 
 # Add items and prices
-mysql_insert_groceries_query = """INSERT INTO groceries (item, item_id, price, unit, store, zipcode, price_date)
+mysql_insert_groceries_query = """INSERT INTO groceries (item_name, item_id, price, unit, store, zipcode, price_date)
                         VALUES (%s, %s, %s, %s, %s, %s, %s) """
 
 print("Updating RDS...")
